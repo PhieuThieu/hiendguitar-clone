@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-active{
+        @apply h-5/6 block w-24 text-clip inline bg-tertiary mr-3 my-auto rounded-3xl  border border-tertiary text-primary
+    }
+    .btn {
+        @apply h-5/6 block w-24 text-clip inline mr-3 my-auto border border-secondary rounded-3xl
+    }
+    .count {
+        @apply m-auto text-sm w-full aspect-square border border-lightSecondary rounded-full
+    }
+    .count-active {
+        @apply bg-tertiary text-primary m-auto text-sm w-full aspect-square rounded-full
+    }
+}

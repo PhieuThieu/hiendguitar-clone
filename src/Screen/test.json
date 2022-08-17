@@ -1,0 +1,36 @@
+{
+  "guitar": {
+    "bass": [
+      {
+        "description": "",
+        "image": "https://cdn.shopify.com/s/files/1/0687/7043/products/DSC06534_087fb51c-d731-4cf6-80c3-7866237108e0_2000x1334.jpg?v=1645077674",
+        "name": "Ernie Ball Music Man BFR StingRay Special 5 Fretless Bass Guitar - Fuego F94130",
+        "price": 3025.99,
+        "specification": "Number of Strings:5 Left-/Right-handed:Right-handed Body Shape:BFR StingRay Special 5 Body Material:Ash Body Finish:High Gloss Polyester Color:Fuego Neck Material:Roasted Figured Maple Neck Joint:5-way Bolt-on Radius:11"
+      },
+      {
+        "description": "",
+        "image": "https://cdn.shopify.com/s/files/1/0687/7043/products/DSC06534_087fb51c-d731-4cf6-80c3-7866237108e0_2000x1334.jpg?v=1645077674",
+        "name": "Ernie Ball Music Man BFR StingRay Special 5 Fretless Bass Guitar - Fuego F94130",
+        "price": 3025.99,
+        "specification": "Number of Strings:5 Left-/Right-handed:Right-handed Body Shape:BFR StingRay Special 5 Body Material:Ash Body Finish:High Gloss Polyester Color:Fuego Neck Material:Roasted Figured Maple Neck Joint:5-way Bolt-on Radius:11"
+      }
+    ],
+    "electric": [
+      {
+        "description": "PRS wood library hiend special run",
+        "image": "https://cdn.shopify.com/s/files/1/0687/7043/products/DSC09490_baaa7b99-e223-496e-8236-d9325a45c124_2000x1334.jpg?v=1653516274",
+        "name": "PRS Tremonti wood library Violet Blue Burst torrefied maple neck run 0339340",
+        "price": 4975.99,
+        "specification": "Tremonti Hybrid hardware Tremonti signature pickup torrefied maple neck Ebony fboard Old school birds paua 10 top flame"
+      },
+      {
+        "description": "PRS wood library hiend special run",
+        "image": "https://cdn.shopify.com/s/files/1/0687/7043/products/DSC09490_baaa7b99-e223-496e-8236-d9325a45c124_2000x1334.jpg?v=1653516274",
+        "name": "PRS Tremonti wood library Violet Blue Burst torrefied maple neck run 0339340",
+        "price": 4975.99,
+        "specification": "Tremonti Hybrid hardware Tremonti signature pickup torrefied maple neck Ebony fboard Old school birds paua 10 top flame"
+      }
+    ]
+  }
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import TitleContainer from "../../Component/TitleContainer/TitleContainer";
 
-function ProductDescription({title ,description}) {
+function ProductDescription({description}) {
   return (
     <div>
       <TitleContainer
-        title={title}
+        title='Product Description'
         titleStyle='pb-2 pt-6'
         description={description}
       />

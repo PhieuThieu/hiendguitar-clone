@@ -5,8 +5,8 @@ import Description from "./Description/Description";
 function TitleContainer({title, description, titleStyle, descriptionStyle, className}) {
   return (
     <div className={className}>
-      <Title style={`${titleStyle}`} element={title}/>
-      <Description style={`${descriptionStyle}`} element={description}/>
+      <Title className={`${titleStyle}`} element={title}/>
+      <Description className={`${descriptionStyle}`} element={description}/>
     </div>
   );
 }

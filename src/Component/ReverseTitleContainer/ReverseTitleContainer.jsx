@@ -5,8 +5,8 @@ import Title from "../TitleContainer/Title/Title";
 function ReverseTitleContainer({title, description, titleStyle, descriptionStyle, className}) {
     return (
       <div className={className}>
-        <Description style={`${descriptionStyle}`} element={description}/>
-        <Title style={`${titleStyle}`} element={title}/>
+        <Description className={`${descriptionStyle}`} element={description}/>
+        <Title className={`${titleStyle}`} element={title}/>
       </div>
     );
   }

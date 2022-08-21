@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Description({style, element}) {
+function Description({className, element}) {
   return (
     <div className='text-secondary'>
-      <div className={style}>{element}</div>
+      <div className={className}>{element}</div>
     </div>
   );
 }

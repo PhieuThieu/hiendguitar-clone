@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Title({style, element}) {
+function Title({className, element}) {
   return (<div className='font-bold '>
-    <div className={style}>{element}</div>
+    <div className={className}>{element}</div>
   </div>);
 }
 

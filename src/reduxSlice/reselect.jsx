@@ -63,7 +63,7 @@ export const productPrice = createDraftSafeSelector([productQuantity, selectProd
 
 export const totalCartPrice = createDraftSafeSelector(selectCart, (carts) => {
   const prices = carts.map(cart => cart.price)
-  return prices.reduce((result, nextPrice) => result + nextPrice, [])
+  return prices.reduce((result, nextPrice) => result + nextPrice, 0)
 })
 
 export const totalQuantity = createDraftSafeSelector(selectCart, (carts) => {

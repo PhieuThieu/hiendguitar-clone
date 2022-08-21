@@ -8,6 +8,7 @@ function CartFooter() {
   const totalPrice = useSelector(totalCartPrice)
   const totalQty= useSelector(totalQuantity)
   const navigate = useNavigate()
+  console.log( totalPrice && 'aa')
 
   const handleCheckOut = () => {
     navigate('/checkout')

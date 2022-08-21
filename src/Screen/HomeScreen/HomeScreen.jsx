@@ -4,6 +4,7 @@ import CategoryBar from "./CategoryBar/CategoryBar";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import {Link} from "react-router-dom";
 import LogoHeader from "../../Component/Heading/LogoHeader";
+import {nanoid} from "nanoid";
 
 function HomeScreen({data, user}) {
 
@@ -21,6 +22,7 @@ function HomeScreen({data, user}) {
       <div className='grid grid-cols-2 gap-x-7 gap-y-5 '>
         {data.map(data => (
             <ProductInfo
+              key={nanoid()}
               info={data}
               image={data.image}
               name={data.name}

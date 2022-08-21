@@ -2,7 +2,7 @@ import React from 'react';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import HomeIcon from '@mui/icons-material/Home';
 import FeaturedIcon from "../FeaturedIcon/FeaturedIcon";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import {Person, ShoppingBag} from "@mui/icons-material";
@@ -21,8 +21,7 @@ function TaskBar({user}) {
       />
       <FeaturedIcon
         name='search'
-        activeType={<FormatListBulletedIcon fontSize='large' className='text-tertiary'/>}
-        normalType={<FormatListBulletedIcon fontSize='large' className='text-secondary'/>}
+        normalType={<SearchIcon fontSize='large' className='text-secondary'/>}
       />
       <FeaturedIcon
         name='cart'

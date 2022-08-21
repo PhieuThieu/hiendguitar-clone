@@ -1,11 +1,24 @@
 import {createDraftSafeSelector} from "@reduxjs/toolkit";
-import {counterIncrement, selectProduct, selectProductInfo, selectQuantity} from './productSlice'
+import {
+  counterIncrement,
+  selectProduct,
+  selectProductInfo,
+  selectQuantity,
+  selectSearchRequest
+} from './productSlice'
 import {selectBtn} from "./categorySlice";
 import {useDispatch} from "react-redux";
+import {selectCart} from "./cartSlice";
 
 export const bassGuitar = createDraftSafeSelector(selectProduct, (product) => {
   if (product.length !== 0) {
     return product[0].bass
+  }
+})
+
+export const acousticGuitar = createDraftSafeSelector(selectProduct, (product) => {
+  if (product.length !== 0) {
+    return product[0].acoustic
   }
 })
 
@@ -15,29 +28,54 @@ export const electricGuitar = createDraftSafeSelector(selectProduct, (product) =
   }
 })
 
-export const selectGuitar = createDraftSafeSelector([bassGuitar, electricGuitar, selectBtn], (bass, electric, btn) => {
-  if (bass && electric) {
+export const allGuitar = createDraftSafeSelector([acousticGuitar, bassGuitar, electricGuitar], (acoustic, bass, electric) => {
+  if (bass && electric && acoustic) {
+    return [...electric, ...bass, ...acoustic]
+  }
+})
+
+export const selectGuitar = createDraftSafeSelector([acousticGuitar, bassGuitar, electricGuitar, allGuitar, selectBtn], (acoustic, bass, electric, all, btn) => {
+  if (acoustic && bass && electric && all) {
     switch (btn.name) {
       case 'Electric':
         return electric
       case 'Bass':
         return bass
-      // case 'acoustic': return acoustic
+      case 'Acoustic':
+        return acoustic
       default:
-        return electric.concat(bass)
+        return all
     }
   } else return []
 })
 
 export const productQuantity = createDraftSafeSelector(selectQuantity, (quantity) => {
   const dispatch = useDispatch()
-
   if (quantity < 1) {
     dispatch(counterIncrement())
   }
   return quantity
 })
 
-export  const  productPrice = createDraftSafeSelector([productQuantity, selectProductInfo], (quantity, product) => {
+export const productPrice = createDraftSafeSelector([productQuantity, selectProductInfo], (quantity, product) => {
   return quantity * product.price
+})
+
+export const totalCartPrice = createDraftSafeSelector(selectCart, (carts) => {
+  const prices = carts.map(cart => cart.price)
+  return prices.reduce((result, nextPrice) => result + nextPrice, [])
+})
+
+export const totalQuantity = createDraftSafeSelector(selectCart, (carts) => {
+  return carts.length
+})
+
+export const searchProduct = createDraftSafeSelector([allGuitar, selectSearchRequest], (all, request) => {
+  if (all) {
+    if (request.values === '') {
+      return all
+    } else {
+      return all.filter(product => product.name.toLowerCase().includes(request.values.toLowerCase()))
+    }
+  } else return []
 })

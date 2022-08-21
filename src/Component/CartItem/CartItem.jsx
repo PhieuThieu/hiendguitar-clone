@@ -1,14 +1,17 @@
 import React from 'react';
 import ItemDescription from "./ItemDescription";
 
-function CartItem({image, name, price, quantity}) {
+function CartItem({image, name, price, quantity, index, active}) {
+
   return (
     <div className='h-full grid grid-cols-4 mb-8'>
       <img className='rounded-xl object-cover h-full' src={image} alt=""/>
       <ItemDescription
+        index={index}
         name={name}
         price={price}
         quantity={quantity}
+        active={active}
         nameStyle='text-ellipsis whitespace-nowrap overflow-hidden font-medium'
       />
     </div>

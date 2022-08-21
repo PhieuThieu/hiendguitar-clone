@@ -4,7 +4,7 @@ import {useForm} from "react-hook-form";
 import {TextField} from "@mui/material";
 import {ErrorMessage} from '@hookform/error-message';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import ReverseTitleContainer from "../../Component/ReverseTitleContainer/ReverseTitleContainer";
 import SubmitButton from "../../Component/SubmitButton/SubmitButton";
 import Description from "../../Component/TitleContainer/Description/Description";
@@ -78,10 +78,10 @@ function LoginScreen() {
         />
         {passwordShown ? (<VisibilityOutlinedIcon
           onClick={() => setPasswordShown(!passwordShown)}
-          className='absolute right-10 top-5'
+          className='absolute right-1 top-5'
         />) : (<VisibilityOffOutlinedIcon
           onClick={() => setPasswordShown(!passwordShown)}
-          className='absolute right-10 top-5'
+          className='absolute right-1 top-5'
         />)}
         <ErrorMessage errors={errors} name="password"
                       render={({message}) => (<div className='text-error mt-2 text-sm'>{message}</div>)}/>
@@ -99,9 +99,9 @@ function LoginScreen() {
       </div>
       <SubmitButton name='Sign in' type='submit'/>
       <div className="flex justify-center mt-7 w-11/12 mx-auto">
-        <Description element="Don't you have account?" style='text-sm'/>
+        <Description element="Don't you have account?" className='text-sm'/>
         <Link to='/account/sign-up'>
-          <Title element='Sign up for free.' style='text-sm ml-2 '/>
+          <Title element='Sign up for free.' className='text-sm ml-2 '/>
         </Link>
       </div>
     </form>

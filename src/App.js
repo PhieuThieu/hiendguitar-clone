@@ -20,12 +20,12 @@ import {onAuthStateChanged} from "firebase/auth";
 import {auth, database} from "./FireBase/firebase";
 import SearchScreen from "./Screen/SearchScreen/SearchScreen";
 import {child, get, ref} from "firebase/database";
-import {getProduct, selectProduct} from "./reduxSlice/productSlice";
+import {getProduct} from "./reduxSlice/productSlice";
+import {selectGuitar} from "./reduxSlice/reselect";
 
 function App() {
   const user = useSelector(selectUser)
-  const product = useSelector(selectProduct)
-
+  const product = useSelector(selectGuitar)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function App() {
       }).catch((error) => {
       console.error(error);
     });
-  }, []);
+  }, [dispatch]);
 
 
   return (<div className="App relative ">
@@ -59,7 +59,7 @@ function App() {
         <Route
           path='/'
           element={<>
-            <HomeScreen data={product}/>
+            <HomeScreen user={user} data={product}/>
             <TaskBar user={user}/>
           </>}
         />
@@ -84,7 +84,7 @@ function App() {
           element={<>
             <Heading title='Check Out'/>
             <CheckOutScreen/>
-            <CheckOutFooter/>
+            <CheckOutFooter user={user}/>
           </>}
         />
         <Route
@@ -98,7 +98,7 @@ function App() {
         />
         <Route
           path='account'
-          element={<AccountScreen/>}
+          element={<AccountScreen user={user}/>}
         />
         <Route
           path='account/sign-in'

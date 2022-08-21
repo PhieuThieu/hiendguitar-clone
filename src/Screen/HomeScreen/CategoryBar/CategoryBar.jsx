@@ -10,9 +10,9 @@ function CategoryBar() {
 
   return (
     <div className='my-5 h-10 w-full block overflow-x-scroll overflow-y-hidden whitespace-nowrap'>
-      {!btn ? <Btn key={nanoid()} name={category[0]} active={btn.active}/> : category.map(btnName => {
-        if ( btnName === btn.name) {
-         return <Btn key={nanoid()} name={btnName} active={btn.active}/>
+      {category.map(btnName => {
+        if (btnName === btn.name) {
+          return <Btn key={nanoid()} name={btnName} active={btn.active}/>
         }
         return <Btn key={nanoid()} name={btnName}/>
       })}

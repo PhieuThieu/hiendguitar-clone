@@ -22,7 +22,7 @@ function CartFooter() {
         itemsQty={totalQty}
         price={totalPrice}
         freight='5'
-        buttonName='GotoPayment'
+        buttonName='Go to Payment'
       />
     </div>
   );

@@ -28,7 +28,7 @@ function CheckOutFooter({user}) {
         itemsQty={totalQty}
         price={totalPrice}
         freight='5'
-        buttonName='GotoPayment'
+        buttonName='Checkout'
       />
     </div>
   );

@@ -1,31 +1,21 @@
 import {createDraftSafeSelector} from "@reduxjs/toolkit";
 import {
-  counterIncrement,
-  selectProduct,
-  selectProductInfo,
-  selectQuantity,
-  selectSearchRequest
+  counterIncrement, selectProducts, selectProductInfo, selectQuantity, selectSearchRequest
 } from './productSlice'
 import {selectBtn} from "./categorySlice";
 import {useDispatch} from "react-redux";
 import {selectCart} from "./cartSlice";
 
-export const bassGuitar = createDraftSafeSelector(selectProduct, (product) => {
-  if (product.length !== 0) {
-    return product[0].bass
-  }
+export const bassGuitar = createDraftSafeSelector(selectProducts, (product) => {
+  return product.bass
 })
 
-export const acousticGuitar = createDraftSafeSelector(selectProduct, (product) => {
-  if (product.length !== 0) {
-    return product[0].acoustic
-  }
+export const acousticGuitar = createDraftSafeSelector(selectProducts, (product) => {
+  return product.acoustic
 })
 
-export const electricGuitar = createDraftSafeSelector(selectProduct, (product) => {
-  if (product.length !== 0) {
-    return product[0].electric
-  }
+export const electricGuitar = createDraftSafeSelector(selectProducts, (product) => {
+  return product.electric
 })
 
 export const allGuitar = createDraftSafeSelector([acousticGuitar, bassGuitar, electricGuitar], (acoustic, bass, electric) => {
@@ -78,4 +68,12 @@ export const searchProduct = createDraftSafeSelector([allGuitar, selectSearchReq
       return all.filter(product => product.name.toLowerCase().includes(request.values.toLowerCase()))
     }
   } else return []
+})
+
+export const selectQuantityGuitar = createDraftSafeSelector([selectProducts], (products) => {
+  const acoustic = products.acoustic?.length
+  const electric = products.electric?.length
+  const bass = products.electric?.length
+  return [acoustic + bass + electric, bass, acoustic, electric]
+
 })

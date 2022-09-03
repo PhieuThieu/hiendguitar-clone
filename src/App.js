@@ -4,12 +4,9 @@ import HomeScreen from "./Screen/HomeScreen/HomeScreen";
 import SearchBar from "./Component/SearchBar/SearchBar";
 import TaskBar from "./Component/TaskBar/TaskBar";
 import ProductScreen from "./Screen/ProductScreen/ProductScreen";
-import ProductFooter from "./Screen/FooterScreen/ProductFooter";
 import Heading from "./Component/Heading/Heading";
 import CartScreen from "./Screen/CartScreen/CartScreen";
-import CartFooter from "./Screen/FooterScreen/CartFooter";
 import CheckOutScreen from "./Screen/CheckOutScreen/CheckOutScreen";
-import CheckOutFooter from "./Screen/FooterScreen/CheckOutFooter";
 import LoginScreen from "./Screen/LoginScreen/LoginScreen";
 import SignUpScreen from "./Screen/SignUpScreen/SignUpScreen";
 import AccountScreen from "./Screen/accountScreen/AccountScreen";
@@ -21,11 +18,14 @@ import {auth, database} from "./FireBase/firebase";
 import SearchScreen from "./Screen/SearchScreen/SearchScreen";
 import {child, get, ref} from "firebase/database";
 import {getProduct} from "./reduxSlice/productSlice";
-import {selectGuitar} from "./reduxSlice/reselect";
+import { selectGuitar, selectQuantityGuitar} from "./reduxSlice/reselect";
+import FooterDesktop from "./Screen/ProductScreen/FooterDesktop/FooterDesktop";
 
 function App() {
   const user = useSelector(selectUser)
+
   const product = useSelector(selectGuitar)
+  const itemQuantity = useSelector(selectQuantityGuitar)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -59,8 +59,9 @@ function App() {
         <Route
           path='/'
           element={<>
-            <HomeScreen user={user} data={product}/>
+            <HomeScreen user={user} data={product} itemQuantity={itemQuantity}/>
             <TaskBar user={user}/>
+            <FooterDesktop/>
           </>}
         />
         <Route
@@ -68,7 +69,7 @@ function App() {
           element={<>
             <Heading title='Product'/>
             <ProductScreen/>
-            <ProductFooter/>
+            <FooterDesktop/>
           </>}
         />
         <Route
@@ -76,15 +77,15 @@ function App() {
           element={<>
             <Heading title='Your Cart'/>
             <CartScreen/>
-            <CartFooter/>
+            <FooterDesktop/>
           </>}
         />
         <Route
           path='checkout'
           element={<>
             <Heading title='Check Out'/>
-            <CheckOutScreen/>
-            <CheckOutFooter user={user}/>
+            <CheckOutScreen user={user}/>
+            <FooterDesktop/>
           </>}
         />
         <Route
@@ -98,15 +99,24 @@ function App() {
         />
         <Route
           path='account'
-          element={<AccountScreen user={user}/>}
+          element={<>
+            <AccountScreen user={user}/>
+            <FooterDesktop/>
+          </>}
         />
         <Route
           path='account/sign-in'
-          element={<LoginScreen/>}
+          element={<>
+            <LoginScreen/>
+            <FooterDesktop/>
+          </>}
         />
         <Route
           path='account/sign-up'
-          element={<SignUpScreen/>}
+          element={<>
+            <SignUpScreen/>
+            <FooterDesktop/>
+          </>}
         />
       </Routes>
     </Router>

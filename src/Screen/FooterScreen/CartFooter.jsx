@@ -6,17 +6,16 @@ import {useNavigate} from "react-router-dom";
 
 function CartFooter() {
   const totalPrice = useSelector(totalCartPrice)
-  const totalQty= useSelector(totalQuantity)
+  const totalQty = useSelector(totalQuantity)
   const navigate = useNavigate()
-  console.log( totalPrice && 'aa')
 
   const handleCheckOut = () => {
     navigate('/checkout')
   }
 
-
   return (
-    <div className='fixed z-10 bg-primary bottom-0 w-full'>
+    <div
+      className='fixed z-10 bg-primary bottom-0 w-full lg:relative lg:border border-secondary-400 lg:rounded-xl lg:z-0'>
       <Footer
         onClick={handleCheckOut}
         itemsQty={totalQty}

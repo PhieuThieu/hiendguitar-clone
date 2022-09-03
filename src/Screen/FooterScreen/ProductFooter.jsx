@@ -47,7 +47,7 @@ function ProductFooter() {
 
 
   return (
-    <div className='p-5 fixed bg-primary bottom-0 w-full z-20 shadow-top'>
+    <div className='p-5 fixed bg-primary bottom-0 w-full z-20 shadow-top lg:relative lg:shadow-none lg:mt-5 lg:z-0'>
       <SuccessSubmit content='Added to cart successfully!' active={submit}/>
       <div className="flex justify-between">
         <CountQuantityButton quantity={quantity}

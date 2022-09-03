@@ -15,7 +15,7 @@ function Heading({title, path, image, child, noBackArrow}) {
   }
 
   return (
-    <div className='fixed top-0 z-10 bg-primary w-full p-5'>
+    <div className='fixed top-0 z-10 bg-primary w-full p-5 lg:hidden'>
       <div className="flex relative justify-center">
         {!noBackArrow && <BackArrow onClick={handleClick} link={path}/>}
         <ScreenTitles title={title} image={image} child={child}/>

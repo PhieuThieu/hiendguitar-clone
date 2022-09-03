@@ -7,10 +7,10 @@ const initialState = {
     {type: 'Office', address: '29 Đường Lê Duẩn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh'}
   ],
   paymentMethod: [
-    {name: "Momo", url: 'https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png'},
-    {name: "Visa", url: 'https://st4.depositphotos.com/1050070/21934/i/600/depositphotos_219349068-stock-photo-chisinau-moldova-september-2018-visa.jpg'},
-    {name: "Master Card", url: 'https://images.fonearena.com/blog/wp-content/uploads/2015/07/MasterCard_early_1990s_logo.jpg'},
-    {name: "Cash on Delivery", url: 'https://cdn1.iconfinder.com/data/icons/e-commerce-291/100/e_-commerce_-_outlined_cod-512.png'},
+    {name: "Momo", url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bHjHnPSDXgBS2WSVOAm57BdPvoAmwBMcqXwjTGUiiJGYrkvUZuVgZHXeZJWWX7kLlCg&usqp=CAU'},
+    {name: "Visa", url: 'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1488032888/p7vdrckw0wuktcfiwdnh.png'},
+    {name: "Master Card", url: 'https://mobeyforum.org/wp-content/uploads/2017/09/mastercard-200x200.jpg'},
+    {name: "Cash on Delivery", url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkpLnqEiu6qekBVP5NJGKk3EQxB61vt_UNdDGly4UPHjUZYUJoL87WXarDtqsMjjTHjGM&usqp=CAU'},
   ]
 }
 

@@ -4,22 +4,22 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import './SliderImage.css'
 
 const images = [
-  'https://wildwoodguitars.com/wp-content/uploads/2014/08/prs-wood-library-banner.jpg',
-  'https://guitar.com/wp-content/uploads/2018/01/Taylor-PS-Koa-914-v-class-group-2018-min.png',
-  'https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium-5/fender-precision-bass-patent-drawing-from-1953-aged-pixel.jpg',
+  'https://cdn.shopify.com/s/files/1/2501/6068/files/Sterling_New_2022_1110x333_2220x666_2x_v2_2200x660_crop_top.jpg?v=1661132089',
+  'https://cdn.shopify.com/s/files/1/2501/6068/files/Heavy_Metal_1110x333_2220x666_2x_02bca8eb-ef8d-4ab9-ad0f-2c8018471a28_2200x660_crop_top.jpg?v=1660544517',
+  'https://cdn.shopify.com/s/files/1/2501/6068/files/Last_Piece_Collection_1110x333_2220x666_2x_308d95b6-ed68-4a39-8e9b-4ee2164077d2_2200x660_crop_top.jpg?v=1659952619',
+  'https://cdn.shopify.com/s/files/1/2501/6068/files/Artist_Signature_Guitars_1110x333_2220x666_2x_f78f202b-cdee-4b45-8147-d2c766844a8a_2200x660_crop_top.jpg?v=1658127259',
 ]
 
 function SliderImage() {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
 
   return (
-    <div className='h-44 rounded-md '>
+    <div className='h-44 rounded-md sm:h-64 md:h-72 '>
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false}
-        internval={6000}
         organicArrows={false}
-        transitionDelay={500}
+        transitionDelay={3000}
         buttons={false}
       >
         {images.map((img, index) => (

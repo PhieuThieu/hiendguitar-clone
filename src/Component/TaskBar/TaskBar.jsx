@@ -9,29 +9,27 @@ import {Person, ShoppingBag} from "@mui/icons-material";
 
 
 function TaskBar({user}) {
-
-
   return (
-    <div className='fixed bottom-0 bg-primary flex w-full block rounded-l justify-between mt-5 py-2 shadow-top'>
+    <div className='fixed bottom-0 bg-primary flex w-full block rounded-l justify-between mt-5 py-2 shadow-top lg:hidden'>
       <FeaturedIcon
         name='/'
         active='active'
         activeType={<HomeIcon fontSize='large' className='text-tertiary'/>}
-        normalType={<HomeOutlinedIcon fontSize='medium' className='text-secondary'/>}
+        normalType={<HomeOutlinedIcon fontSize='medium' className='text-secondary-600'/>}
       />
       <FeaturedIcon
         name='search'
-        normalType={<SearchIcon fontSize='large' className='text-secondary'/>}
+        normalType={<SearchIcon fontSize='large' className='text-secondary-600'/>}
       />
       <FeaturedIcon
         name='cart'
         activeType={<ShoppingBag fontSize='large' className='text-tertiary'/>}
-        normalType={<ShoppingBagOutlinedIcon fontSize='large' className='text-secondary'/>}
+        normalType={<ShoppingBagOutlinedIcon fontSize='large' className='text-secondary-600'/>}
       />
       <FeaturedIcon
         name={user ? 'account' : 'account/sign-in'}
         activeType={<Person fontSize='large' className='text-tertiary'/>}
-        normalType={<PersonOutlineIcon fontSize='large' className='text-secondary'/>}
+        normalType={<PersonOutlineIcon fontSize='large' className='text-secondary-600'/>}
       />
     </div>
   );

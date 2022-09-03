@@ -12,7 +12,7 @@ function Footer({itemsQty, price, freight, buttonName, onClick}) {
   }, [price, freight])
 
   return (
-    <div className='p-5 shadow-top'>
+    <div className='p-5 shadow-top lg:shadow-none'>
       <ReverseTitleContainer
         className='flex justify-between mb-5'
         description={`Subtotal Items (${itemsQty})`}
@@ -24,7 +24,7 @@ function Footer({itemsQty, price, freight, buttonName, onClick}) {
         description='Delivery Fee'
         title={`${freight} $`}
       />
-      <div className=' border-t-[1px] my-5 border-lightSecondary '/>
+      <div className=' border-t-[1px] my-5 border-secondary-100 '/>
       <ReverseTitleContainer
         className='flex justify-between'
         description='Total'

@@ -29,7 +29,7 @@ function ItemDescription({name, nameStyle, quantity, price, index, active}) {
         descriptionStyle='text-sm'
       />
 
-      <ClearIcon className='ml-auto col-span-2 text-secondary' onClick={handleRemove} fontSize='small'/>
+      <ClearIcon className='ml-auto col-span-2 text-secondary-600' onClick={handleRemove} fontSize='small'/>
       <span className='col-span-5 mt-auto'>
         <Title element={`USD ${price}`}/>
       </span>

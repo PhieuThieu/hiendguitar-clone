@@ -9,7 +9,7 @@ function CategoryBar() {
   const btn = useSelector(selectBtn)
 
   return (
-    <div className='my-5 h-10 w-full block overflow-x-scroll overflow-y-hidden whitespace-nowrap'>
+    <div className='my-5 h-10 w-full block overflow-x-scroll overflow-y-hidden whitespace-nowrap lg:hidden'>
       {category.map(btnName => {
         if (btnName === btn.name) {
           return <Btn key={nanoid()} name={btnName} active={btn.active}/>

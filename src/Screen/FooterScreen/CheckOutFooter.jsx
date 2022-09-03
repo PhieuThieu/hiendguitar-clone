@@ -21,7 +21,7 @@ function CheckOutFooter({user}) {
   }
 
   return (
-    <div className='fixed z-10 bg-primary bottom-0 w-full'>
+    <div className='fixed z-10 bg-primary bottom-0 w-full lg:relative lg:z-0 lg:border lg:rounded-xl border-secondary-400'>
       <SuccessSubmit content='Payment is Successful.' active={success}/>
       <Footer
         onClick={handlePayment}

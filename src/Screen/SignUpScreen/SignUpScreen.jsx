@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import {TextField} from "@mui/material";
 import {ErrorMessage} from "@hookform/error-message";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import SubmitButton from "../../Component/SubmitButton/SubmitButton";
 import Description from "../../Component/TitleContainer/Description/Description";
 import {Link, useNavigate} from "react-router-dom";

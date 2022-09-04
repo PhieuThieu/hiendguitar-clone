@@ -1,6 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {categoryBtn: ["All", "Electric", "Acoustic","Bass"], clicked:{name: 'All' , active: 'btn-active'}}
+const initialState = {
+  categoryBtn: ["All", "Acoustic", "Bass", "Electric",],
+  clicked: {name: 'All', active: 'btn-active'},
+}
 
 const categorySlice = createSlice({
   name: 'category',
@@ -17,5 +20,4 @@ export const selectCategory = (state) => state.category.categoryBtn
 
 export const selectBtn = (state) => state.category.clicked
 
-
-export default  categorySlice
+export default categorySlice

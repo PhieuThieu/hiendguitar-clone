@@ -48,7 +48,7 @@ function SignUpScreen() {
   return (<div className='lg:mx-auto max-w-screen-lg'>
     <Heading title='Sign up' path='/account/sign-in'/>
     <Header/>
-    <div className="lg:w-3/4 lg:mx-auto">
+    <div className="lg:w-3/4 lg:mx-auto min-h-[50vh]">
       <h2 className="lg:block hidden pt-32 ml-5 mb-5 text-4xl">Sign Up</h2>
       <form className='w-auto mx-5 mt-24 lg:mb-7 lg:mt-0' onSubmit={handleSubmit(onSubmit)}>
 

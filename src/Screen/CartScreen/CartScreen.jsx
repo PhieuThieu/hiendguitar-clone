@@ -17,7 +17,7 @@ function CartScreen() {
         <div className='pt-24 lg:block hidden'>
           <Breadcrumb type='Cart'/>
         </div>
-        <div className="lg:grid grid-cols-3 gap-x-2">
+        <div className="lg:grid grid-cols-3 gap-x-2 max-h-[70vh] overflow-y-scroll">
           <div className="px-5 mt-24 relative mb-64 lg:my-0 col-span-2">
             <div className='mt-16 lg:mt-0'>
               {items.map((item, index) => <CartItem key={nanoid()} index={index} image={item.image}

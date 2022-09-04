@@ -25,7 +25,7 @@ function HomeScreen({data, user, itemQuantity}) {
   return (
     <div className='mx-5 mb-16 max-w-screen-lg lg:mx-auto '>
       <LogoHeader helloText={!user ? 'Welcome to' : `Hi ${user.displayName}`} />
-      <Header/>
+      <Header user={user}/>
       <div className="lg:pt-32">
         <SliderImage/>
         <CategoryBar/>

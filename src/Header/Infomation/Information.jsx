@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function Information() {
+function Information({user}) {
   return (<div className=' flex col-span-1 ml-auto gap-x-2 col-start-11'>
-    <Link to='/account'>
+    <Link to={user ? '/account' : '/account/sign-in'}>
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
            className='fill-secondary-400 hover:fill-tertiary'
            viewBox="0 0 100 100">

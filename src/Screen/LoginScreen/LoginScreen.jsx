@@ -45,7 +45,7 @@ function LoginScreen() {
     <Heading title='Login'/>
     <Header/>
     <div className="lg:w-3/4 lg:mx-auto">
-      <h2 className="pt-32 ml-5 mb-5 text-4xl">Login</h2>
+      <h2 className="lg:block hidden pt-32 ml-5 mb-5 text-4xl">Login</h2>
       <form className='w-auto mx-5 mt-24 lg:mb-7 lg:mt-0' onSubmit={handleSubmit(onSubmit)}>
         <div className="w-full">
           <TextField

@@ -10,11 +10,11 @@ function CheckOutScreen({user}) {
   return (
     <div className='mx-auto max-w-screen-lg'>
       <Header/>
-      <div className='pt-24'>
+      <div className='pt-24 lg:block hidden'>
         <Breadcrumb type='Cart' item='CheckOut'/>
       </div>
       <div className='lg:grid grid-cols-3'>
-        <div className='px-5 mt-24 relative h-[calc(100vh+30px)] lg:mt-0 lg:h-auto lg:col-span-2'>
+        <div className='px-5 mt-24 relative lg:mt-0 lg:h-auto lg:col-span-2'>
           <Title element='Shipping to' className='font-medium text-lg'/>
           <ShippingAddress/>
           <Title element='Payment Menthod' className='font-medium text-lg'/>

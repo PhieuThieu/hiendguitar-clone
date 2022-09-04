@@ -14,7 +14,7 @@ function CartScreen() {
     <div className='mx-auto max-w-screen-lg'>
       <Header/>
       <div className="max-w-screen-lg">
-        <div className='pt-24'>
+        <div className='pt-24 lg:block hidden'>
           <Breadcrumb type='Cart'/>
         </div>
         <div className="lg:grid grid-cols-3 gap-x-2">

@@ -15,18 +15,18 @@ function ProductScreen() {
 
   return (<div className='mt-24 mb-40 lg:mx-auto max-w-screen-lg lg:mt-0'>
     <Header/>
-    <div className='pt-24'>
+    <div className='pt-24 lg:block hidden'>
       <Breadcrumb type={info.name}/>
     </div>
     <div className="lg:grid lg:grid-cols-3">
-      <div className="lg:mx-0 col-span-2">
-        <span className='lg:hidden'><ProductInfo image={info.image} name={info.name} price={info.price}/></span>
+      <div className="lg:mx-0 mx-5 col-span-2">
+        <span className='lg:hidden block'><ProductInfo image={info.image} name={info.name} price={info.price}/></span>
         <ProductContent title={info.name} image={info.image}/>
         <ProductDescription description={info.description}/>
         <ProductSpecification description={info.specification}/>
       </div>
       <div className="col-span-1">
-        <div className='px-5'><Title element={info.name}/></div>
+        <div className='px-5 lg:block hidden'><Title element={info.name}/></div>
         <ProductFooter/>
       </div>
     </div>

@@ -44,6 +44,7 @@ function App() {
         let data = snapshot.val()
         if (snapshot.exists()) {
           dispatch(getProduct(data))
+          console.log(data)
         } else {
           console.log("No data available");
         }

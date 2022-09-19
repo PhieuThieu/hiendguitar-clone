@@ -40,9 +40,8 @@ function HomeScreen({data, user, itemQuantity}) {
           <TypeCategory category={category} itemQuantity={itemQuantity}/>
           <div className="lg:col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-5">
             {data.map(data => (
-              <span className='lg:hover:shadow-box cursor-pointer'>
+              <span key={nanoid()} className='lg:hover:shadow-box cursor-pointer'>
                 <ProductInfo
-                  key={nanoid()}
                   type={breadcrumb.name}
                   info={data}
                   image={data.image}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import {useDispatch} from "react-redux";
-import {searchProduct} from "../../reduxSlice/productSlice";
+import { searchProducts} from "../../reduxSlice/productSlice";
 import {useNavigate} from "react-router-dom";
 
 function SearchBar({className, navigateHistory}) {
@@ -10,7 +10,7 @@ function SearchBar({className, navigateHistory}) {
   const dispatch = useDispatch()
 
   const handleSearch = () => {
-    dispatch(searchProduct({values: value}))
+    dispatch(searchProducts(value))
     navigateHistory && navigate(navigateHistory)
   }
 

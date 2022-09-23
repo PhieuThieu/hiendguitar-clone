@@ -11,11 +11,13 @@ import TypeCategory from "../../Component/TypeCategory/TypeCategory";
 import {useDispatch, useSelector} from "react-redux";
 import {selectBtn, selectCategory} from "../../reduxSlice/categorySlice";
 import {searchProduct} from "../../reduxSlice/productSlice";
+import { selectQuantityGuitar} from "../../reduxSlice/reselect";
 
-function HomeScreen({data, user, itemQuantity}) {
+function HomeScreen({data, user}) {
   const category = useSelector(selectCategory)
   const breadcrumb = useSelector(selectBtn)
   const dispatch = useDispatch()
+  const itemQuantity = useSelector(selectQuantityGuitar)
 
   useEffect(() => {
     dispatch(searchProduct({values:''}))
@@ -35,11 +37,11 @@ function HomeScreen({data, user, itemQuantity}) {
             <p className='font-medium'>See All</p>
           </Link>
         </div>
-        <span className='lg:block hidden'><Breadcrumb type={breadcrumb.name}/></span>
+        <span className='lg:block hidden'><Breadcrumb type={breadcrumb.name} /></span>
         <div className='grid gap-x-7 gap-y-5 lg:grid-cols-4 '>
           <TypeCategory category={category} itemQuantity={itemQuantity}/>
           <div className="lg:col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-5">
-            {data.map(data => (
+            {data && data.map(data => (
               <span key={nanoid()} className='lg:hover:shadow-box cursor-pointer'>
                 <ProductInfo
                   type={breadcrumb.name}

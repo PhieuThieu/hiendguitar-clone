@@ -2,7 +2,7 @@ import React from 'react';
 import BackArrow from "./BackArrow";
 import ScreenTitles from "./ScreenTitles";
 import {useDispatch} from "react-redux";
-import {clearInfo} from "../../reduxSlice/productSlice";
+import {clearInfo, searchProducts} from "../../reduxSlice/productSlice";
 import {useNavigate} from "react-router-dom";
 
 function Heading({title, path, image, child, noBackArrow}) {
@@ -10,6 +10,7 @@ function Heading({title, path, image, child, noBackArrow}) {
   const dispatch = useDispatch()
 
   const handleClick = () => {
+    dispatch(searchProducts(''))
     dispatch(clearInfo())
     navigate(-1)
   }

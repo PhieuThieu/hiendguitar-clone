@@ -27,7 +27,7 @@ function TypeCategory({category, itemQuantity}) {
                 <input type='radio' name='category' key={nanoid()} className='accent-tertiary' defaultChecked={btn.active}/>
                 <Description className='ml-1 hover:underline hover:font-bold' element={btnName}/>
               </label>
-              <Description element={`(${itemQuantity[index] || ''})`}/>
+              <Description element={`(${itemQuantity[index] || 0})`}/>
             </div>
           }
           return <div onClick={() => handleClick(btnName)} key={nanoid()} className='flex justify-between py-2'>
@@ -35,7 +35,7 @@ function TypeCategory({category, itemQuantity}) {
               <input type='radio' name='category' className='accent-tertiary' key={nanoid()} />
               <Description className='ml-1 hover:underline hover:font-bold' element={btnName}/>
             </label>
-            <Description element={`(${itemQuantity[index] || ''})`}/>
+            <Description element={`(${itemQuantity[index] || 0})`}/>
           </div>
         })}
       </div>

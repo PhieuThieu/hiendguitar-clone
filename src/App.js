@@ -17,15 +17,13 @@ import {onAuthStateChanged} from "firebase/auth";
 import {auth, database} from "./FireBase/firebase";
 import SearchScreen from "./Screen/SearchScreen/SearchScreen";
 import {child, get, ref} from "firebase/database";
-import {getProduct} from "./reduxSlice/productSlice";
-import { selectGuitar, selectQuantityGuitar} from "./reduxSlice/reselect";
+import {setProduct} from "./reduxSlice/productSlice";
+import { selectGuitar} from "./reduxSlice/reselect";
 import FooterDesktop from "./Screen/ProductScreen/FooterDesktop/FooterDesktop";
 
 function App() {
   const user = useSelector(selectUser)
-
   const product = useSelector(selectGuitar)
-  const itemQuantity = useSelector(selectQuantityGuitar)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -43,8 +41,7 @@ function App() {
       .then((snapshot) => {
         let data = snapshot.val()
         if (snapshot.exists()) {
-          dispatch(getProduct(data))
-          console.log(data)
+          dispatch(setProduct(data))
         } else {
           console.log("No data available");
         }
@@ -60,7 +57,7 @@ function App() {
         <Route
           path='/'
           element={<>
-            <HomeScreen user={user} data={product} itemQuantity={itemQuantity}/>
+            <HomeScreen user={user} data={product} />
             <TaskBar user={user}/>
             <FooterDesktop/>
           </>}

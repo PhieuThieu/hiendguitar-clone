@@ -16,7 +16,7 @@ function ProductScreen() {
   return (<div className='mt-24 mb-40 lg:mx-auto max-w-screen-lg lg:mt-0'>
     <Header/>
     <div className='pt-24 lg:block hidden'>
-      <Breadcrumb type={info.name}/>
+      <Breadcrumb type={info.branch} item={info.name}/>
     </div>
     <div className="lg:grid lg:grid-cols-3">
       <div className="lg:mx-0 mx-5 col-span-2">

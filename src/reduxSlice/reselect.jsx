@@ -12,7 +12,6 @@ export const selectGuitar = createDraftSafeSelector([selectProducts, selectBtn],
       if (product.branch === btn.name) {
         return product
       }
-      return []
     })
   }
 })

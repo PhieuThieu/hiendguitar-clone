@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {clicked, selectBtn} from "../../reduxSlice/categorySlice";
 import {nanoid} from "nanoid";
 import Description from "../TitleContainer/Description/Description";
+import homeScreen from "../../Screen/HomeScreen/HomeScreen";
 
 function TypeCategory({category, itemQuantity}) {
   const btn = useSelector(selectBtn)
@@ -11,6 +12,7 @@ function TypeCategory({category, itemQuantity}) {
 
   const handleClick = (name) => {
     dispatch(clicked({name, active:'btn-active'}))
+    console.log(name)
   }
 
 

@@ -2,10 +2,10 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth'
 import {getDatabase} from 'firebase/database'
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBq9BaOE1AgWHw0Jw_WQ_XgmVMOTMh_7H4",
   authDomain: "hiend-guitar.firebaseapp.com",
-  databaseURL: "https://hiend-guitar-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "hiend-guitar",
   storageBucket: "hiend-guitar.appspot.com",
   messagingSenderId: "1024118690872",

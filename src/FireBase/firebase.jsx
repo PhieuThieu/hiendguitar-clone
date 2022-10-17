@@ -3,14 +3,13 @@ import {getAuth} from 'firebase/auth'
 import {getDatabase} from 'firebase/database'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1lcZWHO_NShVXgpk37ser2vl5sUpfhqQ",
-  authDomain: "hiendguitar-68be4.firebaseapp.com",
-  databaseURL: "https://hiendguitar-68be4-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "hiendguitar-68be4",
-  storageBucket: "hiendguitar-68be4.appspot.com",
-  messagingSenderId: "395265263098",
-  appId: "1:395265263098:web:40a07d36de656bcd0fd043",
-  measurementId: "G-BF1CVVC438"
+  apiKey: "AIzaSyDfPwetNn7VwvV7JxPQcutOkboLPzRMh8E",
+  authDomain: "hiend-guitar-clone.firebaseapp.com",
+  projectId: "hiend-guitar-clone",
+  storageBucket: "hiend-guitar-clone.appspot.com",
+  messagingSenderId: "191431414504",
+  appId: "1:191431414504:web:a507387c5ca5fc56492f5d",
+  measurementId: "G-Y8NN7ML841"
 };
 
 // Initialize Firebase

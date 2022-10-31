@@ -1,19 +1,20 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth'
-import {getDatabase} from 'firebase/database'
+import { getFirestore } from "firebase/firestore";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBq9BaOE1AgWHw0Jw_WQ_XgmVMOTMh_7H4",
-  authDomain: "hiend-guitar.firebaseapp.com",
-  databaseURL: "https://hiend-guitar-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "hiend-guitar",
-  storageBucket: "hiend-guitar.appspot.com",
-  messagingSenderId: "1024118690872",
-  appId: "1:1024118690872:web:6ba6117e057159452f02cd",
-  measurementId: "G-R3D3S9RF60"
+  apiKey: "AIzaSyB1lcZWHO_NShVXgpk37ser2vl5sUpfhqQ",
+  authDomain: "hiendguitar-68be4.firebaseapp.com",
+  databaseURL: "https://hiendguitar-68be4-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "hiendguitar-68be4",
+  storageBucket: "hiendguitar-68be4.appspot.com",
+  messagingSenderId: "395265263098",
+  appId: "1:395265263098:web:40a07d36de656bcd0fd043",
+  measurementId: "G-BF1CVVC438"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
-export const database = getDatabase(app);
+export const db = getFirestore(app);

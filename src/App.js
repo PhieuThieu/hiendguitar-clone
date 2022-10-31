@@ -14,12 +14,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {login, logout, selectUser} from "./reduxSlice/userSlice";
 import {useEffect} from "react";
 import {onAuthStateChanged} from "firebase/auth";
-import {auth, database} from "./FireBase/firebase";
+import {auth, db} from "./FireBase/firebase";
 import SearchScreen from "./Screen/SearchScreen/SearchScreen";
-import {child, get, ref} from "firebase/database";
 import {setProduct} from "./reduxSlice/productSlice";
 import { selectGuitar} from "./reduxSlice/reselect";
 import FooterDesktop from "./Screen/ProductScreen/FooterDesktop/FooterDesktop";
+import {doc, getDoc} from "firebase/firestore";
 
 function App() {
   const user = useSelector(selectUser)
@@ -37,17 +37,20 @@ function App() {
       }
     })
 
-    get(child(ref(database), `guitar`))
-      .then((snapshot) => {
-        let data = snapshot.val()
-        if (snapshot.exists()) {
-          dispatch(setProduct(data))
-        } else {
-          console.log("No data available");
-        }
-      }).catch((error) => {
-      console.error(error);
-    });
+    const getData = async () => {
+
+      const docRef = doc(db, "guitar","pDeMSLxxO7PXv0yrDRPP");
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        dispatch(setProduct(docSnap.data().guitar))
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }
+   return getData()
+
   }, [dispatch]);
 
 
